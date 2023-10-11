@@ -30,10 +30,24 @@ class _ChrisHomePageState extends State<ChrisHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Chris Application'),
-          backgroundColor: Colors.green,
+      appBar: AppBar(
+        title: const Text('Chris Application'),
+        backgroundColor: Colors.green,
+      ),
+      body: Container(
+        width: double.infinity,
+        height: 200,
+        padding: const EdgeInsets.all(8.0),
+        child: const Text(
+          'Welcome to AQskill',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 235, 18, 14),
+          ),
         ),
-        body: const Text('Flutter Text'));
+      ),
+    );
   }
 }
