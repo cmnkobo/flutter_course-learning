@@ -1,4 +1,5 @@
 import 'package:aqskills_app/main.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,19 +35,43 @@ class _ChrisHomePageState extends State<ChrisHomePage> {
         title: const Text('Chris Application'),
         backgroundColor: Colors.green,
       ),
-      body: Container(
-        width: double.infinity,
-        height: 200,
-        padding: const EdgeInsets.all(8.0),
-        child: const Text(
-          'Welcome to AQskill',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 24.0,
-            fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 235, 18, 14),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: 200,
+            padding: const EdgeInsets.all(8.0),
+            child: const Text(
+              'Welcome to AQskill',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 235, 18, 14),
+              ),
+            ),
           ),
-        ),
+          RichText(
+            text: TextSpan(
+                text: "Don't have an account?",
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400),
+                children: [
+                  TextSpan(
+                      text: ' Sign Up',
+                      style: const TextStyle(
+                          color: Color.fromARGB(255, 9, 158, 191),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          print('Hello, thank you for signing up');
+                        }),
+                ]),
+          )
+        ],
       ),
     );
   }
