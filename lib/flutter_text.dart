@@ -53,12 +53,13 @@ class _ChrisHomePageState extends State<ChrisHomePage> {
           ),
           RichText(
             text: TextSpan(
-                text: "Don't have an account?",
+                text: "Don't have an account?  ",
                 style: const TextStyle(
                     color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.w400),
                 children: [
+                  const WidgetSpan(child: Icon(Icons.supervised_user_circle)),
                   TextSpan(
                       text: ' Sign Up',
                       style: const TextStyle(
