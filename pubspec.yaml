@@ -79,6 +79,11 @@ flutter:
     - family: Federo
       fonts:
         - asset: fonts/Federo-Regular.ttf
+
+fonts:
+    - family: Lato
+      fonts:
+        - asset: fonts/Lato-Regular.ttf
         
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
