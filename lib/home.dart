@@ -34,13 +34,14 @@ class ChrisHomePage extends StatefulWidget {
 
 class _ChrisHomePageState extends State<ChrisHomePage> {
   int pageindex = 0;
+  String apptitle = 'Tech App';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Tech App',
-          style: TextStyle(
+        title: Text(
+          apptitle,
+          style: const TextStyle(
             fontSize: 20.0,
             letterSpacing: 1.0,
             fontFamily: 'Lato',
@@ -65,6 +66,9 @@ class _ChrisHomePageState extends State<ChrisHomePage> {
             width: 10.0,
           )
         ],
+        backgroundColor: pageindex == 0
+            ? Colors.black
+            : const Color.fromARGB(255, 6, 130, 202),
       ),
       body: IndexedStack(
         index: pageindex,
@@ -77,13 +81,19 @@ class _ChrisHomePageState extends State<ChrisHomePage> {
         selectedItemColor: const Color.fromARGB(255, 237, 9, 9),
         currentIndex: pageindex,
         onTap: (index) {
+          if (index == 0) {
+            apptitle = "Tech App";
+          } else {
+            apptitle = "Ecommerce";
+          }
           if (index == 2) {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const ChrisCartPage()));
+          } else {
+            setState(() {
+              pageindex = index;
+            });
           }
-          setState(() {
-            pageindex = index;
-          });
         },
         items: const [
           BottomNavigationBarItem(
@@ -346,11 +356,8 @@ class ChrisEcommerce extends StatefulWidget {
 class _ChrisEcommerceState extends State<ChrisEcommerce> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Ecommerce'),
-      ),
-      body: const Text('Ecommrce'),
+    return const Scaffold(
+      body: Text('Ecommrce'),
     );
   }
 }
