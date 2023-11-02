@@ -234,73 +234,78 @@ class _HeadlineDetailsState extends State<HeadlineDetails> {
                     ),
                   ]),
             ),
-            Container(
+            Padding(
               padding: const EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
+              child: Container(
+                padding: const EdgeInsets.all(15.0),
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
-                  color: Colors.grey.withOpacity(.5)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: NetworkImage('https://shorturl.at/mwNRZ'),
-                              fit: BoxFit.cover),
-                        ),
-
-                        // child: const
-                      ),
-                      const Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            ' Christian Michael',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                              height: 1.3,
-                              letterSpacing: 1,
-                            ),
+                  color: Colors.grey.withOpacity(.5),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image:
+                                    NetworkImage('https://shorturl.at/mwNRZ'),
+                                fit: BoxFit.cover),
                           ),
-                          Text(
-                            ' 28-10-2023',
-                            style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              color: Colors.black,
-                              height: 1.3,
-                              letterSpacing: 1,
+
+                          // child: const
+                        ),
+                        const Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              ' Christian Michael',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                                height: 1.3,
+                                letterSpacing: 1,
+                              ),
                             ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10.0,
-                  ),
-                  const Text(
-                    "The user-facing interface, it's the backend development that "
-                    " provides the underlying infrastructure and functionality that "
-                    " makes an application work seamlessly",
-                    style: TextStyle(
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black,
-                      fontSize: 15,
-                      height: 1.3,
-                      letterSpacing: 1,
+                            Text(
+                              ' 28-10-2023',
+                              style: TextStyle(
+                                fontWeight: FontWeight.normal,
+                                color: Colors.black,
+                                height: 1.3,
+                                letterSpacing: 1,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
                     ),
-                  )
-                ],
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                    const Text(
+                      "The user-facing interface, it's the backend development that "
+                      " provides the underlying infrastructure and functionality that "
+                      " makes an application work seamlessly",
+                      style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
+                        fontSize: 15,
+                        height: 1.3,
+                        letterSpacing: 1,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ],

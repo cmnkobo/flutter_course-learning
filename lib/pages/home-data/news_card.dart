@@ -1,6 +1,7 @@
 import 'package:aqskills_app/pages/single_blog.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
 
 class TechNewsBlog1 {
   Widget getCard1({thumbnail, headline, author, fullstory, comments}) {
@@ -238,5 +239,13 @@ class _ChrisBlogPageState extends State<ChrisBlogPage> {
         ),
       ),
     );
+  }
+  //get post (getting link from your php server)
+
+  final dio = Dio();
+
+  void getBlog() async {
+    final response = await dio.get('https://dart.dev');
+    print(response);
   }
 }
