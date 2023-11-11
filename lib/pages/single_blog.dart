@@ -1,4 +1,7 @@
+import 'package:aqskills_app/flutter_text.dart';
+import 'package:aqskills_app/flutter_textfield.dart';
 import 'package:aqskills_app/pages/comments.dart';
+import 'package:aqskills_app/pages/home-data/news_card.dart';
 import 'package:flutter/material.dart';
 
 class HeadlineDetails extends StatefulWidget {
@@ -104,26 +107,34 @@ class _HeadlineDetailsState extends State<HeadlineDetails> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Icon(
-                      Icons.share,
-                      size: 22,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      'Share',
-                      style: TextStyle(
-                        fontSize: 18,
-                        height: 1.2,
-                        fontWeight: FontWeight.normal,
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChrisLoginPage()));
+                  },
+                  child: const Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.login,
+                        size: 22,
                       ),
-                    )
-                  ],
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        'Login',
+                        style: TextStyle(
+                          fontSize: 18,
+                          height: 1.2,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 InkWell(
                   onTap: () {
