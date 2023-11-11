@@ -1,45 +1,40 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const ChrisEntryWidget());
-}
-
-class ChrisEntryWidget extends StatelessWidget {
-  const ChrisEntryWidget({super.key});
+class ChrisLoginPage extends StatefulWidget {
+  const ChrisLoginPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Chris Application',
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: const ChrisHomePage(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
+  State<ChrisLoginPage> createState() => _ChrisLoginPageState();
 }
 
-class ChrisHomePage extends StatefulWidget {
-  const ChrisHomePage({super.key});
-
-  @override
-  State<ChrisHomePage> createState() => _ChrisHomePageState();
-}
-
-class _ChrisHomePageState extends State<ChrisHomePage> {
+class _ChrisLoginPageState extends State<ChrisLoginPage> {
   //username controller
   final TextEditingController _usernameController = TextEditingController();
   //password controller
   final TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chris Application'),
-        backgroundColor: Colors.green,
+        title: const Text('Login to comment'),
+        backgroundColor: Colors.black,
       ),
-      drawer: const Drawer(),
+      //  drawer: const Drawer(),
       body: Column(
         children: [
+          const SizedBox(
+            height: 25,
+          ),
+          const Text(
+            'Login to comment',
+            style: TextStyle(
+                fontWeight: FontWeight.w400,
+                letterSpacing: 1,
+                height: 1.2,
+                fontSize: 18),
+          ),
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: TextField(
@@ -79,13 +74,41 @@ class _ChrisHomePageState extends State<ChrisHomePage> {
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: ElevatedButton(
-                onPressed: () {
-                  print("Login initializing");
-                  var username = _usernameController.text;
-                  var password = _passwordController.text;
-                  print('Username: $username password: $password');
-                },
-                child: const Text('Login')),
+              onPressed: () {
+                print("Login initializing");
+                var username = _usernameController.text;
+                var password = _passwordController.text;
+                print('Username: $username password: $password');
+              },
+              child: const Text('Login'),
+            ),
+          ),
+          RichText(
+            text: TextSpan(
+              text: "Don't have account?? ",
+              style: const TextStyle(
+                fontSize: 17.0,
+                color: Colors.black,
+                fontWeight: FontWeight.w400,
+                wordSpacing: 1.0,
+              ),
+              children: [
+                const WidgetSpan(child: Icon(Icons.supervised_user_circle)),
+                TextSpan(
+                  text: ' Sign Up',
+                  style: const TextStyle(
+                    fontSize: 17.4,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.w500,
+                    color: Color.fromARGB(255, 8, 168, 217),
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      print("You have clicked sign up");
+                    },
+                ),
+              ],
+            ),
           )
         ],
       ),
