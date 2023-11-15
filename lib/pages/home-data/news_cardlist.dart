@@ -1,5 +1,6 @@
 import 'package:aqskills_app/pages/cart.dart';
 import 'package:aqskills_app/pages/home-data/news_card.dart';
+import 'package:aqskills_app/pages/search_blog.dart';
 import 'package:aqskills_app/pages/shop.dart';
 import 'package:flutter/material.dart';
 
@@ -36,8 +37,10 @@ class _ChrisHomePageState extends State<ChrisHomePage> {
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
-              // ignore: avoid_print
-              print('Search');
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ChrisSearchBlog()));
             },
           ),
           const SizedBox(
