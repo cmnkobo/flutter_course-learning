@@ -30,10 +30,11 @@ class _ChrisLoginPageState extends State<ChrisLoginPage> {
           const Text(
             'Login to comment',
             style: TextStyle(
-                fontWeight: FontWeight.w400,
-                letterSpacing: 1,
-                height: 1.2,
-                fontSize: 18),
+              fontWeight: FontWeight.w400,
+              letterSpacing: 1,
+              height: 1.2,
+              fontSize: 18,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -46,7 +47,7 @@ class _ChrisLoginPageState extends State<ChrisLoginPage> {
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       width: 1.5,
-                      color: Color.fromARGB(255, 11, 17, 11),
+                      color: Color.fromARGB(255, 26, 163, 232),
                     ),
                   ),
                   labelText: 'Type your user name',
@@ -61,9 +62,11 @@ class _ChrisLoginPageState extends State<ChrisLoginPage> {
               decoration: const InputDecoration(
                   icon: Icon(Icons.lock),
                   iconColor: Colors.black,
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.horizontal()),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
+                      color: Color.fromARGB(255, 26, 163, 232),
                       width: 1.5,
                     ),
                   ),
@@ -75,10 +78,19 @@ class _ChrisLoginPageState extends State<ChrisLoginPage> {
             padding: const EdgeInsets.all(12.0),
             child: ElevatedButton(
               onPressed: () {
-                print("Login initializing");
+                //  print("Login initializing");
                 var username = _usernameController.text;
                 var password = _passwordController.text;
-                print('Username: $username password: $password');
+                // print('Username: $username password: $password');
+                //check if username and password isEmpty
+                if (username.isEmpty || password.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text('Username or Password cannot be empty')));
+                } else {
+                  //Channel to login
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Login Successful')));
+                }
               },
               child: const Text('Login'),
             ),
