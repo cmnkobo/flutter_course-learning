@@ -33,18 +33,61 @@ class _ChrisEcommerceState extends State<ChrisEcommerce> {
                     Colors.black.withOpacity(.0),
                   ]),
                 ),
-                child: const Align(
+                child: Align(
                   alignment: Alignment.bottomLeft,
                   child: Padding(
-                    padding: EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        Container(
+                          //add background color to the fashion text
+                          decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(.5),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+
+                          child: const Text(
+                            'Men Fashion',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        const Text(
                           "Product",
                           style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
+                              color: Colors.white,
+                              fontSize: 21.0,
+                              fontWeight: FontWeight.w900),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '#5,000',
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.orange,
+                              ),
+                            ),
+                            Text(
+                              'Buy now',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 15),
+                            )
+                          ],
                         ),
                       ],
                     ),
