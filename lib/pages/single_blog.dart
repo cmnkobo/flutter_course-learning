@@ -1,4 +1,5 @@
 import 'package:aqskills_app/flutter_text.dart';
+//import 'package:share_plus/share_plus.dart';
 import 'package:aqskills_app/flutter_textfield.dart';
 import 'package:aqskills_app/pages/comments.dart';
 import 'package:aqskills_app/pages/home-data/news_card.dart';
@@ -138,34 +139,30 @@ class _HeadlineDetailsState extends State<HeadlineDetails> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ChrisBlogComment(
-                          commentArray: ChrisBlogComment,
-                        ),
-                      ),
-                    );
+                    //Share.share('check out my website https://example.com');
                   },
-                  child: const Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Icon(
-                        Icons.comment,
-                        size: 22,
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        ' (2) Comments',
-                        style: TextStyle(
-                            fontSize: 18,
-                            height: 1.2,
-                            fontWeight: FontWeight.normal),
-                      )
-                    ],
+                  child: const Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 12, 0),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(
+                          Icons.share,
+                          size: 22,
+                        ),
+                        SizedBox(
+                          width: 3,
+                        ),
+                        Text(
+                          'Share',
+                          style: TextStyle(
+                              fontSize: 18,
+                              height: 1.2,
+                              fontWeight: FontWeight.normal),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
