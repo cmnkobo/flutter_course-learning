@@ -14,24 +14,13 @@ class _ChrisEcommerceState extends State<ChrisEcommerce> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Container(
-        child: CarouselSlider(
-          items: [
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.all(5.0),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage("https://shorturl.at/jkpxU"),
-                    fit: BoxFit.cover),
-              ),
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient:
-                      LinearGradient(begin: Alignment.bottomRight, colors: [
-                    Colors.black.withOpacity(1),
-                    Colors.black.withOpacity(.0),
-                  ]),
+      body: Column(children: [
+        ChrisEcommSlider().getEcommSlider(height),
+        Divider(
+          color: Colors.grey[400],
+          thickness: 1,
+        )
+      ]),
                 ),
                 child: Align(
                   alignment: Alignment.bottomLeft,
