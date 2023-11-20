@@ -1,4 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:aqskills_app/pages/Ecomm/slider.dart';
+import 'package:aqskills_app/pages/home-data/chris_productcard.dart';
 import 'package:flutter/material.dart';
 
 class ChrisEcommerce extends StatefulWidget {
@@ -13,93 +14,18 @@ class _ChrisEcommerceState extends State<ChrisEcommerce> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: Column(children: [
-        ChrisEcommSlider().getEcommSlider(height),
-        Divider(
-          color: Colors.grey[400],
-          thickness: 1,
-        )
-      ]),
-                ),
-                child: Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          //add background color to the fashion text
-                          decoration: BoxDecoration(
-                            color: Colors.black.withOpacity(.5),
-                            borderRadius: BorderRadius.circular(5),
-                          ),
 
-                          child: const Text(
-                            'Men Fashion',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.0,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        const Text(
-                          "Product",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 21.0,
-                              fontWeight: FontWeight.w900),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '#5,000',
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.orange,
-                              ),
-                            ),
-                            Text(
-                              'Buy now',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 15),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ChrisEcommSlider().getEcommSlider(height),
+            Divider(
+              color: Colors.grey[400],
+              thickness: 1,
             ),
+            ChrisProductCard().getProductCard(context),
           ],
-          options: CarouselOptions(
-            height: (height / 4.2),
-            aspectRatio: 16 / 9,
-            viewportFraction: 0.8,
-            initialPage: 0,
-            enableInfiniteScroll: true,
-            reverse: false,
-            autoPlay: true,
-            autoPlayInterval: const Duration(seconds: 3),
-            autoPlayAnimationDuration: const Duration(milliseconds: 800),
-            autoPlayCurve: Curves.fastOutSlowIn,
-            enlargeCenterPage: true,
-            enlargeFactor: 0.3,
-            scrollDirection: Axis.horizontal,
-          ),
         ),
       ),
     );
