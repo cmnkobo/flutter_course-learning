@@ -18,10 +18,15 @@ class _ChrisLoginPageState extends State<ChrisLoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login to comment'),
+        foregroundColor: Colors.white,
+        title: const Text(
+          'Login to comment',
+          style: TextStyle(
+            fontSize: 20,
+          ),
+        ),
         backgroundColor: Colors.black,
       ),
-      //  drawer: const Drawer(),
       body: Column(
         children: [
           const SizedBox(

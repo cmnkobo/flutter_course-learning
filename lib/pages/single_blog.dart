@@ -1,9 +1,7 @@
-import 'package:aqskills_app/flutter_text.dart';
-//import 'package:share_plus/share_plus.dart';
-import 'package:aqskills_app/flutter_textfield.dart';
+import 'package:aqskills_app/login.dart';
 import 'package:aqskills_app/pages/comments.dart';
-import 'package:aqskills_app/pages/home-data/news_card.dart';
 import 'package:flutter/material.dart';
+//fimport 'package:share_plus/share_plus.dart';
 
 class HeadlineDetails extends StatefulWidget {
   const HeadlineDetails({super.key});
@@ -139,7 +137,7 @@ class _HeadlineDetailsState extends State<HeadlineDetails> {
                 ),
                 InkWell(
                   onTap: () {
-                    //Share.share('check out my website https://example.com');
+                    //        Share.share('check out my website https://example.com');
                   },
                   child: const Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 12, 0),
